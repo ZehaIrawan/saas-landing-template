@@ -1,4 +1,5 @@
 import React from "react"
+import {StaticImage} from 'gatsby-plugin-image'
 
 const Hero = () => {
   return (
@@ -12,7 +13,11 @@ const Hero = () => {
         <button>Get Started</button>
       </div>
       <div>
-        <img src="/hero-img.png" alt="" />
+        <StaticImage
+          src="../images/hero-img.png"
+          formats={["auto", "webp", "avif"]}
+          alt="A Gatsby astronaut"
+        />
       </div>
     </div>
   )

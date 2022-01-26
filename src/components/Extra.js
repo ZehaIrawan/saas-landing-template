@@ -1,13 +1,17 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
-import {withPrefix} from 'gatsby'
 
-const Extra = ({item}) => {
-
-  const {image,title,description} = item
+const Extra = ({ item }) => {
+  const { pic, title, description } = item
+  const image = getImage(pic)
 
   return (
     <div>
-      <img src={withPrefix(image)} alt="" />
+      <GatsbyImage
+        className="lg:w-full object-contain"
+        image={image}
+        alt={title}
+      />
       <h1>{title}</h1>
       <p>{description}</p>
     </div>

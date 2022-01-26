@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import {StaticImage} from 'gatsby-plugin-image'
 
 const Navbar = ({ setIsOpen }) => {
   const isBrowser = () => typeof window !== "undefined"
@@ -34,7 +35,13 @@ const Navbar = ({ setIsOpen }) => {
       <div className="flex justify-between items-center px-6 py-4 lg:w-4/5 lg:mx-auto">
         <div>
           <a href="/">
-            <span className="text-sm text-theme font-bold"><img src="/logo.svg" alt="" /></span>
+            <span className="text-sm text-theme font-bold">
+              <StaticImage
+                src="../images/logo.svg"
+                formats={["auto", "webp", "avif"]}
+                alt="A Gatsby astronaut"
+              />
+            </span>
           </a>
         </div>
 
